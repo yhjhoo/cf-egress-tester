@@ -6,7 +6,8 @@ This app is intended for testing [application security group](http://docs.pivota
 ## Running locally
 1.  Clone this repo.
 2.  Download dependencies with `bundle install`.
-3.  Run the app at http://localhost:9292/
+3.  Run the app with `bundle exec rackup` or just `rackup`. 
+4.  The app should be reachable at http://localhost:9292/.
 
 ## Testing on Cloud Foundry
 Assuming you have a local CF instance on bosh-lite:
