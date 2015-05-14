@@ -1,0 +1,32 @@
+label {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.container {
+  background-color: #EFF5FB;
+  max-width: 750px;
+}
+
+.container .panel {
+  background-color: #F8F8F8;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.container .alert {
+  margin-left: 60px;
+  margin-right: 60px;
+  display: none;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+.jumbotron {
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #EFF5FB;
+}

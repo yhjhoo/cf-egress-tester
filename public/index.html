@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Egress Tester</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/egress-test.css" rel="stylesheet">
+
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="http://fgnass.github.io/spin.js/spin.min.js"></script>
+      <script src="js/egress-test.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <div class="jumbotron">
+          <h1>Can I Reach It?</h1>
+          <p class="lead">This app is intended for testing
+            <a href="http://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html">application security group</a> rules
+            in Cloud Foundry. It provides a quick check of network egress from the running application (e.g. from within
+            a CF space).</p>
+
+          <p class="lead">To check connectivity, fill out the form below or programmatically use <code>GET /egress-status/tcp|udp/{host}/{port}</code>.</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Egress Test</h3>
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal" id="egress-form" action="javascript:checkEgressStatus()">
+              <div class="form-group"></div>
+              <div class="form-group">
+                <label for="inputHost" class="col-sm-2 control-label">Host</label>
+                <div class="col-sm-9">
+                  <input type="host" class="form-control" id="inputHost" placeholder="Enter hostname or IP Address" autofocus="true">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPort" class="col-sm-2 control-label">Port</label>
+                <div class="col-sm-9">
+                  <input type="port" class="form-control" id="inputPort" placeholder="Port">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-9">
+                  <span style="float: right;">
+                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                  </span>
+                  <div class="btn-group" data-toggle="buttons" id="protocol-buttons">
+                    <span class="btn btn-primary active">
+                      <input type="radio" name="options" id="protocol-tcp" checked="true">TCP</input>
+                    </span>
+                    <span class="btn btn-primary">
+                      <input type="radio" name="options" id="protocol-udp">UDP</input>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="status-result" class="alert" role="alert">
+        </div>
+      </div>
+    </div>
+
+    </body>
+</html>
