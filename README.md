@@ -19,6 +19,7 @@ Assuming you have a local CF instance on bosh-lite:
   3. From the app, again fill out the form for `google.com:80`, this time verifying that the connection is refused.
 
 To restore connectivity for a specific destination, such as google.com, add a security group opening only that egress.
+
 1. `nslookup google.com`
 2.  Take one of the resolved IP addresses (e.g. `216.58.216.78`, though there are many) and enter it into a security group definition such as
   ``` sh
@@ -33,7 +34,6 @@ To restore connectivity for a specific destination, such as google.com, add a se
   EOF
   ```
 3. Apply the security group
-
   ``` sh
   > cf create-security-group google asg_google-public-http.json
   > cf bind-security-group google me development
