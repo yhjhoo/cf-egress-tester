@@ -22,6 +22,7 @@ To restore connectivity for a specific destination, such as google.com, add a se
 
 1. `nslookup google.com`
 2.  Take one of the resolved IP addresses (e.g. `216.58.216.78`, though there are many) and enter it into a security group definition such as
+
   ``` sh
   cat << EOF > asg_google-public-http.json
   [
@@ -33,10 +34,13 @@ To restore connectivity for a specific destination, such as google.com, add a se
   ]
   EOF
   ```
+
 3. Apply the security group
+
   ``` sh
   > cf create-security-group google asg_google-public-http.json
   > cf bind-security-group google me development
   > cf restart egress-test
   ```
+
 4. Navigate to the app again and verify connectivity to that IP (e.g. `216.58.216.78:80`).
