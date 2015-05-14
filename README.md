@@ -10,6 +10,7 @@ This app is intended for testing [application security group](http://docs.pivota
 
 ## Testing on Cloud Foundry
 Assuming you have a local CF instance on bosh-lite:
+
 1. Deploy the app with `cf push egress-test`.
 2. Navigate to the app's route, fill out the form for `google.com:80`, verify connectivity.
 3. Remove outbound access to public networks.
@@ -32,6 +33,7 @@ To restore connectivity for a specific destination, such as google.com, add a se
   EOF
   ```
 3. Apply the security group
+
   ``` sh
   > cf create-security-group google asg_google-public-http.json
   > cf bind-security-group google me development
