@@ -4,10 +4,12 @@ A quick app to test network egress from a CF space.
 This app is intended for testing [application security group](http://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html) rules in Cloud Foundry. Once deployed to CF, it provides a quick check of network egress from the running application (e.g. from within a CF space).  It provides a UI form for testing connectivity to a specific host:port, and an HTTP endpoint at `GET /egress-status/tcp|udp/{host}/{port}`.
 
 ## Running locally
-1.  Clone this repo.
-2.  Download dependencies with `bundle install`.
-3.  Run the app with `bundle exec rackup` or just `rackup`. 
-4.  The app should be reachable at http://localhost:9292/.
+1. Clone this repo.
+1. Ruby is required. [Ruby installation info](https://www.ruby-lang.org/en/documentation/installation/)
+1. Install the Ruby bundler for dependency management using `gem install bundler`
+1. Download dependencies with `bundle install`.
+1. Run the app with `bundle exec rackup` or just `rackup`. 
+1. The app should be reachable at http://localhost:9292/.
 
 ## Testing on Cloud Foundry
 Assuming you have a local CF instance on bosh-lite:
